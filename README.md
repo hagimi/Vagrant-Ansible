@@ -1,4 +1,3 @@
-
 VirtualBox
 
 install homebrew
@@ -28,11 +27,6 @@ install vagrant
 `$ brew install python`
 
 `$ pip install ansible`
-
-`$ vim hosts`
-
-    [web-server]
-    192.168.33.10
 
 `$ ansible 192.168.33.10 -m ping -i hosts`
 
