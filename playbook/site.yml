@@ -1,5 +1,5 @@
 ---
-- hosts: vagrant
+- hosts: web-server
   port: 22
   user: vagrant
   sudo: yes
