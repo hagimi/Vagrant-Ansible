@@ -1,0 +1,7 @@
+---
+- hosts: vagrant
+  port: 22
+  user: vagrant
+  sudo: yes
+  tasks:
+    - include: tasks/lamp.yml
