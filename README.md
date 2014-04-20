@@ -28,8 +28,9 @@ install vagrant
 
 `$ pip install ansible`
 
-`$ ansible 192.168.33.10 -m ping -i hosts`
+`cd playbook`
+`$ ansible 192.168.33.10 -m ping -i servers`
 
-`$ ansible-playbook playbook/site.yml -i hosts`
+`$ ansible-playbook site.yml -i servers`
 
 Access http://192.168.33.10/info.php
