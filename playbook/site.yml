@@ -1,7 +1,3 @@
 ---
-- hosts: web-server
-  port: 22
-  user: vagrant
-  sudo: yes
-  tasks:
-    - include: tasks/lamp.yml
+- include: common.yml
+- include: lamp.yml

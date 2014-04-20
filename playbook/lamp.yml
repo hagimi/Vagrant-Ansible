@@ -1,0 +1,9 @@
+---
+- hosts: web-server
+  sudo: yes
+  roles:
+    - lamp
+  vars_prompt:
+    - name: "dbpassword"
+      prompt: "Please enter MySQL fuel_dev user password"
+      default: "root"

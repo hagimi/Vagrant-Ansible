@@ -1,0 +1,33 @@
+---
+- name: be sure python-setuptools is installed
+  yum: pkg=python-setuptools state=installed
+  tags: httpd
+
+- name: be sure httpd is installed
+  yum: pkg=httpd state=installed
+  tags: httpd
+
+- name: install easy_install package
+  easy_install: name=pip
+  tags: httpd
+
+- name: install pip package
+  pip: name=httplib2
+  tags: httpd
+
+- name: copy index.html
+  copy: src=roles/lamp/templates/index.html dest=/var/www/html
+  tags: httpd
+
+- name: copy virtualhost.conf
+  copy: src=roles/lamp/templates/virtualhost.conf dest=/etc/httpd/conf.d/
+  tags: httpd
+
+- name: be sure httpd is running and enabled
+  service: name=httpd state=running enabled=yes
+  tags: httpd
+
+- name: check httpd is working
+  uri: url=http://192.168.33.10/
+  tags: httpd
+
