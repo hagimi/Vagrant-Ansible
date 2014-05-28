@@ -1,8 +1,8 @@
 ---
-- hosts: web-server
+- hosts: db-server
   sudo: yes
   roles:
-    - lamp
+    - db-server
   vars_prompt:
     - name: "dbpassword"
       prompt: "Please enter MySQL fuel_dev user password"

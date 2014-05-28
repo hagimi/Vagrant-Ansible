@@ -15,7 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :web do |web|
     web.vm.network :forwarded_port, guest: 80, host: 8080
     web.vm.network :private_network, ip: "192.168.33.10"
-    web.vm.synced_folder "~/work/projects", "/product", type: "rsync", rsync_exclude: [".git/"]
+#    web.vm.synced_folder "~/work/projects", "/product", type: "rsync", rsync_exclude: [".git/"]
     web.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512"]
       vb.name = "CentOS-vagrant-web"
@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define :db do |db|
-    db.vm.network "forwarded_port", guest: 80, host: 8080
+    db.vm.network "forwarded_port", guest: 80, host: 8888
     db.vm.network "private_network", ip: "192.168.33.20"
     db.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512"]

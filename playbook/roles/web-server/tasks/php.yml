@@ -13,7 +13,7 @@
   tags: php
 
 - name: copy info.php
-  copy: src=roles/lamp/templates/info.php dest=/var/www/html
+  copy: src=roles/web-server/templates/info.php dest=/var/www/html
   tags: php
 
 - name: set timezone in php.ini
