@@ -13,9 +13,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "CentOS6.5"
   config.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v6.5.1/centos65-x86_64-20131205.box"
   config.vm.define :web do |web|
-    web.vm.network :forwarded_port, guest: 80, host: 8080
+    web.vm.network :forwarded_port, guest: 80, host: 1234
     web.vm.network :private_network, ip: "192.168.33.10"
 #    web.vm.synced_folder "~/work/projects", "/product", type: "rsync", rsync_exclude: [".git/"]
+    web.vm.synced_folder "C:/work", "/product", mount_options: ["dmode=777", "fmode=777"]
+
     web.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--memory", "512"]
       vb.name = "CentOS-vagrant-web"
