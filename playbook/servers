@@ -1,4 +1,4 @@
 [web-server]
-web
+localhost ansible_connection=local
 [db-server]
-db
+localhost ansible_connection=local

@@ -1,3 +1,4 @@
 ---
 dbname: fuel_dev
 dbuser: root
+dbpassword: root

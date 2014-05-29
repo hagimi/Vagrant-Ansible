@@ -3,7 +3,7 @@
   sudo: yes
   roles:
     - db-server
-  vars_prompt:
-    - name: "dbpassword"
-      prompt: "Please enter MySQL fuel_dev user password"
-      default: "root"
+#  vars_prompt:
+#    - name: "dbpassword"
+#      prompt: "Please enter MySQL fuel_dev user password"
+#      default: "root"
